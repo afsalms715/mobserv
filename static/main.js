@@ -1,0 +1,10 @@
+$(document).ready(function(){
+    $("#contact-form").validate({
+        rules:{
+            eamil:{
+                email:true,
+                required:true,
+            }
+        }
+    })
+})
