@@ -19,5 +19,6 @@ from mobservapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.fun,name='fun')
+    path('',views.fun,name='fun'),
+    path('messages',views.messages,name='messages')
 ]

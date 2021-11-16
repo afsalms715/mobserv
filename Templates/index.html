@@ -117,7 +117,8 @@
                     <p class="lead text-secondary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi accusantium quis molestiae voluptatibus officia? Quas, omnis! Aliquam rem quaerat sit neque animi id minima a facere possimus dolore, molestiae nam, ratione inventore vel iure praesentium autem minus placeat, sunt sint quasi in! Sit beatae dicta maxime nesciunt officia molestias dignissimos!</p>
                 </div>
                 <div class="col-lg-6 colsm-12">
-                    <form id="contact-form">
+                    <form action="messages" method="post" id="contact-form">
+                        {% csrf_token %}
                         <div class="card p-3">
                             <h2 class="text-center card-title">contact us</h2>
                             <div class="mb-3">
@@ -129,7 +130,7 @@
                                 <textarea name="message" id="msg" cols="30" rows="6" class="form-control" placeholder="write your message...."></textarea>
                             </div> 
                             <div class="mb-3 d-grid">
-                                <button class="btn btn-primary">Send Us</button>
+                                <button class="btn btn-primary" value="submit">Send Us</button>
                             </div>   
                         </div>
                     </form>
