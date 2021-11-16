@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body{
+    background-color: rgb(180, 219, 219);
+}
+.logimg{
+    border-radius: 30px;
+}
+.logbrand{
+    background-color: rgb(76, 70, 85);
+    /* border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px; */
+}
+.butn{
+    background-color: black;
+    color: white;
+}
+.butn:hover{
+    background-color: white;
+    border: 1px solid;
+    color: black;
+}
+.logbrand2{
+    background-color: rgb(76,70, 85);
+    /* border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px; */
+}

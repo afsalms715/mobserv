@@ -12,3 +12,5 @@ def messages(request):
     msgs=mobmsg(email=email,msg=message)
     msgs.save()
     return redirect('/')
+def signup(request):
+    return render(request,'singup.html')
