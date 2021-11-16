@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render,redirect
 from . models import mobmsg
 # Create your views here.
@@ -13,4 +14,14 @@ def messages(request):
     msgs.save()
     return redirect('/')
 def signup(request):
+    if request.method=='POST':
+        name=request.POST['name']
+        username=request.POST['username']
+        email=request.POST['email']
+        password=request.POST['password']
+        print('name:'+name+'\n'+'email:'+email+'\n'+'password:'+password)
+        user=User.objects.create_user(username=username,password=password,email=email,name=name)
+        user.save()
+        print('create user')
+        return redirect('/')
     return render(request,'singup.html')
