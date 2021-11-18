@@ -16,7 +16,7 @@
             <a href="#home" class="navbar-brand">
                 <h3>MOB<span class="text-primary">SERVE</span></h3>
                 {% if user.is_authenticated %}
-                    <h4> hi {{User.first_name}}</h4>
+                    <h4> hi {{user.first_name}}</h4>
                 {% endif %}
             </a>
             <button class="navbar-toggler" data-bs-toggler="collapse" data-bs-target="#menu" aria-expanded="flase" aria-label="Toggle navigation">
@@ -80,6 +80,7 @@
         </div>
     </section>
     <!--Services-->
+    {% if user.is_authenticated %}
     <section id="services" class="services mt-5 mb-5">
         <div class="container">
             <h1 class="text-center ">Our Services</h1>
@@ -115,6 +116,7 @@
             </div>
         </div>
     </section>
+    {% endif %}
     <!--contact-->
     <section id="contact" class="contact mt-5 mb-5">
         <div class="container">

@@ -22,10 +22,15 @@ def signup(request):
         email=request.POST['email']
         password=request.POST['password']
         print('name:'+name+'\n'+'email:'+email+'\n'+'password:'+password)
-        user=User.objects.create_user(username=username,password=password,email=email,first_name=name)
-        user.save()
-        print('create user')
-        return redirect('/')
+        if User.objects.filter(username=username).exists():
+            messages.info(request,'user name already taken ')
+        elif User.objects.filter(email=email):
+            messages.info(request'email is already taken ')
+        else:
+            user=User.objects.create_user(username=username,password=password,email=email,first_name=name)
+            user.save()
+            print('create user')
+            return redirect('/')
     return render(request,'singup.html')
 
 def login(request):
