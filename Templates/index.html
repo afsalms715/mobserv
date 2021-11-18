@@ -15,6 +15,9 @@
         <div class="container">
             <a href="#home" class="navbar-brand">
                 <h3>MOB<span class="text-primary">SERVE</span></h3>
+                {% if user.is_authenticated %}
+                    <h4> hi {{User.first_name}}</h4>
+                {% endif %}
             </a>
             <button class="navbar-toggler" data-bs-toggler="collapse" data-bs-target="#menu" aria-expanded="flase" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -34,8 +37,12 @@
                         <a href="#contact" class="nav-link">Contact</a>
                     </li>
                 </ul>
+                {% if user.is_authenticated %}
+                <a href="logout" ><button class="btn btn-outline-primary">Logout</button></a>
+                {% else %}
                 <a href="signup" ><button class="btn btn-primary me-2">SignUp</button></a>
-                <button class="btn btn-outline-primary">Login</button>
+                <a href="login" ><button class="btn btn-outline-primary">Login</button></a>
+                {% endif %}
             </div>
         </div>
     </nav>
@@ -117,7 +124,7 @@
                     <p class="lead text-secondary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi accusantium quis molestiae voluptatibus officia? Quas, omnis! Aliquam rem quaerat sit neque animi id minima a facere possimus dolore, molestiae nam, ratione inventore vel iure praesentium autem minus placeat, sunt sint quasi in! Sit beatae dicta maxime nesciunt officia molestias dignissimos!</p>
                 </div>
                 <div class="col-lg-6 colsm-12">
-                    <form action="messages" method="post" id="contact-form">
+                    <form action="message" method="post" id="contact-form">
                         {% csrf_token %}
                         <div class="card p-3">
                             <h2 class="text-center card-title">contact us</h2>
