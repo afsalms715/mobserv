@@ -25,7 +25,7 @@ def signup(request):
         if User.objects.filter(username=username).exists():
             messages.info(request,'user name already taken ')
         elif User.objects.filter(email=email):
-            messages.info(request'email is already taken ')
+            messages.info(request,'email is already taken ')
         else:
             user=User.objects.create_user(username=username,password=password,email=email,first_name=name)
             user.save()
