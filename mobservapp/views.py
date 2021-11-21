@@ -1,11 +1,11 @@
 from django.contrib.auth.models import User,auth
 from django.shortcuts import render,redirect
-from . models import mobmsg
+from . models import mobmsg,mobservices
 from django.contrib import messages
 # Create your views here.
 def fun(request):
-    obj=mobmsg.objects.all()
-    return render(request,'index.html')
+    obj=mobservices.objects.all()
+    return render(request,'index.html',{'services':obj})
 
 def message(request):
     email=request.POST['email']

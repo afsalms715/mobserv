@@ -86,33 +86,35 @@
             <h1 class="text-center ">Our Services</h1>
             <p class="lead text-center text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis! Unde pariatur beatae officiis cumque nesciunt? Repellendus doloremque, adipisci iusto omnis tempore asperiores magnam numquam ipsa maiores, magni at distinctio?</p>
             <div class="row">
+                {% for service in services %}
                 <div class="col-lg-4 colsm-12">
                     <div class="card">
-                        <img src="{% static 'img/image1.jpg'%}" alt="image1" class="img-fluid card-img-top">
+                        <img src={{service.img.url}} alt="image1" class="img-fluid card-img-top">
                         <div class="card-body">
-                            <h2 class="card-title">SmartPhone repaire</h2>
-                            <p class="lead text-secondary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia totam praesentium ipsam blanditiis quasi sapiente inventore unde accusamus autem non eveniet facere, temporibus porro quibusdam? Porro architecto nesciunt ex ea!</p>
+                            <h2 class="card-title">{{service.heading}}</h2>
+                            <p class="lead text-secondary">{{service.desc}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 colsm-12">
-                    <div class="card">
-                        <img src="{% static 'img/image2.jpg'%}" alt="image2" class="img-fluid card-img-top">
-                        <div class="card-body">
-                            <h2 class="card-title">SmartPhone repaire</h2>
-                            <p class="lead text-secondary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia totam praesentium ipsam blanditiis quasi sapiente inventore unde accusamus autem non eveniet facere, temporibus porro quibusdam? Porro architecto nesciunt ex ea!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 colsm-12">
-                    <div class="card">
-                        <img src="{% static 'img/image3.jpg'%}" alt="image3" class="img-fluid card-img-top">
-                        <div class="card-body">
-                            <h2 class="card-title">SmartPhone repaire</h2>
-                            <p class="lead text-secondary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia totam praesentium ipsam blanditiis quasi sapiente inventore unde accusamus autem non eveniet facere, temporibus porro quibusdam? Porro architecto nesciunt ex ea!</p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
+<!--                <div class="col-lg-4 colsm-12">-->
+<!--                    <div class="card">-->
+<!--                        <img src="{% static 'img/image2.jpg'%}" alt="image2" class="img-fluid card-img-top">-->
+<!--                        <div class="card-body">-->
+<!--                            <h2 class="card-title">SmartPhone repaire</h2>-->
+<!--                            <p class="lead text-secondary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia totam praesentium ipsam blanditiis quasi sapiente inventore unde accusamus autem non eveniet facere, temporibus porro quibusdam? Porro architecto nesciunt ex ea!</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 colsm-12">-->
+<!--                    <div class="card">-->
+<!--                        <img src="{% static 'img/image3.jpg'%}" alt="image3" class="img-fluid card-img-top">-->
+<!--                        <div class="card-body">-->
+<!--                            <h2 class="card-title">SmartPhone repaire</h2>-->
+<!--                            <p class="lead text-secondary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia totam praesentium ipsam blanditiis quasi sapiente inventore unde accusamus autem non eveniet facere, temporibus porro quibusdam? Porro architecto nesciunt ex ea!</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
         </div>
     </section>
