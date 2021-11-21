@@ -20,8 +20,8 @@ from mobservapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.fun,name='fun'),
-    path('messages',views.message,name='message'),
-    path('signup',views.signup,name='signup'),
-    path('login',views.login,name='login'),
+    path('message',views.message,name='message'),
+    path('signup/',views.signup,name='signup'),
+    path('login/',views.login,name='login'),
     path('logout',views.logout,name='logout')
 ]

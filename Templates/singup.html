@@ -31,7 +31,7 @@
         </div>
         <div class="col-lg-6 logbrand2 rounded-end">
           <h1 class="text-center text-white mt-5">SIGNUP</h1>
-          <form action="signup" method="post" id="signup">
+          <form action=" " method="post" id="signup">
               {% csrf_token %}
               <div class="form-row mt-3">
                 <input type="text" class="form-control" placeholder="name" name="name">
@@ -40,16 +40,19 @@
                 <input type="text" class="form-control" placeholder="user name" name="username">
               </div>
               <div class="form-row mt-3">
-                <input type="text" class="form-control" placeholder="email" name="email">
+                <input type="email" class="form-control" placeholder="email" name="email">
               </div>
               <div class="form-row mt-3">
                 <input type="text" class="form-control" id="password" placeholder="password" name="password">
-                  <h5 class="plength">minimum 8 letters </h5>
-                  <h5 class="palpha">one capital letter </h5>
-                  <h5 class="pnumber">at least one number</h5>
+                  <h6 class="plength">minimum 8 letters </h6>
+                  <h6 class="palpha">one capital letter </h6>
+                  <h6 class="pnumber">at least one number</h6>
               </div>
               <div class="form-row d-grid mt-3 mb-3">
                 <button class="btn butn" value="submit">SINGUP</button>
+                  {% for message in messages %}
+                    <h4 id="msg">{{message}}</h4>
+                  {% endfor %}
               </div>
           </form>
         </div>
